@@ -34,8 +34,8 @@ $ composer require industrialdev/eventbrite-integration
 ## Usage
 
 ``` php
-$skeleton = new League\Skeleton();
-echo $skeleton->echoPhrase('Hello, League!');
+$eventbrite = new \Industrialdev\Eventbrite\EventbriteClass();
+echo $eventbrite->echoPhrase('Hello, world!');
 ```
 
 ## Change log
@@ -47,10 +47,6 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 ``` bash
 $ composer test
 ```
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
 
 ## Security
 
