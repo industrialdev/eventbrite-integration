@@ -1,7 +1,10 @@
 <?php
-
 require_once "vendor/autoload.php";
 
-$class = new \Industrialdev\Eventbrite\EventbriteClass();
+use jamiehollern\eventbrite\Eventbrite;
 
-echo $class->echoPhrase("It's working");
+$eventbrite = new Eventbrite('S5BPGHXXE2M4FK3JKJPY');
+$events = $eventbrite->get('');
+
+print $eventbrite->canConnect();
+
