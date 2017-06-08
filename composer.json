@@ -27,6 +27,7 @@
         "guzzlehttp/psr7": "~1.4",
         "industrialdev/wicket-sdk-php": "dev-master",
         "kint-php/kint": "^2.1",
+        "twig/twig": "^2.0",
         "vlucas/phpdotenv": "^2.4"
     },
     "require-dev": {
@@ -44,7 +45,7 @@
         }
     },
     "scripts": {
-        "test": "phpunit",
+        "test": "phpunit tests",
         "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
         "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
     },
