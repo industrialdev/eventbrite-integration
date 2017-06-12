@@ -4,4 +4,4 @@ machine:
 
 test:
   override:
-    - phpunit test
+    - composer test
