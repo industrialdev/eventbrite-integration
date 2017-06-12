@@ -1,5 +1,5 @@
 {% for event in events %}
     <div class="event">
-        <a href={{ event.url }} target="_blank">{{ event.title }} | {{event.access_code}}</a>
+        <a href={{ event.url }} target="_blank">{{ event.name.html }} | {{event.access_code}}</a>
     </div>
 {% endfor %}

@@ -22,10 +22,10 @@
     }],
     "require": {
         "php": "~5.6|~7.0",
-        "eventbrite/eventbrite-sdk-php": "dev-master",
         "guzzlehttp/guzzle": "~6.2",
         "guzzlehttp/psr7": "~1.4",
         "industrialdev/wicket-sdk-php": "dev-master",
+        "jamiehollern/eventbrite": "^1.0",
         "kint-php/kint": "^2.1",
         "twig/twig": "^2.0",
         "vlucas/phpdotenv": "^2.4"
