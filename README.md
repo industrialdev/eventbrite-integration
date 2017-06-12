@@ -3,9 +3,6 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
 
 Library for integration of the EventBrite API v3 with multiple applications,
 fine tuned for Event Registration.
@@ -33,9 +30,18 @@ $ composer require industrialdev/eventbrite-integration
 
 ## Usage
 
+* Make sure to create a `.env` file at the root of this project to create the
+  necessary environment variables to access the API.
+
 ``` php
-$eventbrite = new \Industrialdev\Eventbrite\EventbriteClass();
-echo $eventbrite->echoPhrase('Hello, world!');
+<?php
+require_once "vendor/autoload.php";
+use Industrialdev\Eventbrite\Eventbrite;
+
+$eventbrite = new Eventbrite();
+$events = $eventbrite->getEvents('me');
+
+print_r($events);
 ```
 
 ## Change log
