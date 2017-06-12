@@ -46,6 +46,11 @@ class Eventbrite
         return $this->client->get(sprintf('users/%s/owned_events/', $user_id), ['status' => 'live']);
     }
 
+    public function get_orders(string $user_id): array
+    {
+        return $this->client->get(sprintf('users/%s/orders/', $user_id));
+    }
+
     public function get_access_codes(string $event_id): array
     {
         return $this->client->get(sprintf('events/%s/access_codes/',$event_id));
@@ -53,7 +58,6 @@ class Eventbrite
 
     public function create_access_code(string $event_id, string $ticket_id, $opts = []): array
     {
-
         $default = [
             'access_code.code'               => 'CODE'.mt_rand(0, 100), // Actual access code
             'access_code.ticket_ids'         => [$ticket_id], // Ticket Type
@@ -62,7 +66,15 @@ class Eventbrite
         // Allows users to pass in an array of options and override defaults
         $options = array_merge($default, $opts);
 
-        return $this->client->post(sprintf('events/%s/access_codes/', $event_id), $options);
+        $endpoint = sprintf('https://www.eventbriteapi.com/v3/events/%s/access_codes?token=%s', $event_id, getenv('EVENTBRITE_TOKEN'));
+
+        $response = $this->client->post($endpoint, [
+            'headers' => ['Content-Type' => 'application/json'],
+            'body' => json_encode($options)
+        ]);
+
+        // return $this->client->post(sprintf('events/%s/access_codes/', $event_id), $options);
+        return $response;
     }
 
     public function get_event_urls(string $event_id): array
