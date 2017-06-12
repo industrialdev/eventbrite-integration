@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
+[![Build Status][ico-travis]][link-circle]
 
 Library for integration of the EventBrite API v3 with multiple applications,
 fine tuned for Event Registration.
@@ -65,12 +65,11 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-version]: https://img.shields.io/packagist/v/industrialdev/eventbrite-integration.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/industrialdev/eventbrite-integration/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/industrialdev/eventbrite-integration.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/industrialdev/eventbrite-integration.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/industrialdev/eventbrite-integration.svg?style=flat-square
+[ico-circle]: https://circleci.com/gh/industrialdev/eventbrite-integration.svg?style=shield&circle-token=:circle-token
 
 [link-packagist]: https://packagist.org/packages/industrialdev/eventbrite-integration
 [link-travis]: https://travis-ci.org/industrialdev/eventbrite-integration
+[link-circle]: https://circleci.com/gh/industrialdev/eventbrite-integration
 [link-scrutinizer]: https://scrutinizer-ci.com/g/industrialdev/eventbrite-integration/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/industrialdev/eventbrite-integration
 [link-downloads]: https://packagist.org/packages/industrialdev/eventbrite-integration
