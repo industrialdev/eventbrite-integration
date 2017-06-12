@@ -66,15 +66,7 @@ class Eventbrite
         // Allows users to pass in an array of options and override defaults
         $options = array_merge($default, $opts);
 
-        $endpoint = sprintf('https://www.eventbriteapi.com/v3/events/%s/access_codes?token=%s', $event_id, getenv('EVENTBRITE_TOKEN'));
-
-        $response = $this->client->post($endpoint, [
-            'headers' => ['Content-Type' => 'application/json'],
-            'body' => json_encode($options)
-        ]);
-
-        // return $this->client->post(sprintf('events/%s/access_codes/', $event_id), $options);
-        return $response;
+        return $this->client->post(sprintf('events/%s/access_codes', $event_id), $options);
     }
 
     public function get_event_urls(string $event_id): array
