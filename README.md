@@ -1,6 +1,5 @@
 # Eventbrite Integration
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![CircleCI][ico-circle]][link-circle]
 
@@ -9,16 +8,13 @@ fine tuned for Event Registration.
 
 ## Structure
 
-If any of the following are applicable to your project, then the directory structure should follow industry best practises by being named the following.
+If any of the following are applicable to your project, then the directory structure should follow industry best practices by being named the following.
 
 ```
-bin/        
-config/
 src/
 tests/
 vendor/
 ```
-
 
 ## Install
 
@@ -30,16 +26,9 @@ $ composer require industrialdev/eventbrite-integration
 
 ## Usage
 
-* Make sure to create a `.env` file at the root of this project to create the
-  necessary environment variables to access the API.
-
-An example of usage can be found on index.php in this repository.
+An example of usage can be found on the [index.php](index.php) file in this repository.
 
 --
-
-## Change log
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## Testing
 
