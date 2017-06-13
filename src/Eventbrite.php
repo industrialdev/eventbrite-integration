@@ -25,7 +25,7 @@ use jamiehollern\eventbrite\Eventbrite as EBApi;
 class Eventbrite
 {
 
-    public function __construct($token)
+    public function __construct()
     {
         $this->client = new EBApi(getenv('EVENTBRITE_TOKEN'));
         $this->token  = getenv('EVENTBRITE_TOKEN');
