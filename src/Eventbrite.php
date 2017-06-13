@@ -12,10 +12,10 @@ use jamiehollern\eventbrite\Eventbrite as EBApi;
 
 
 // Set up ENV vars
-$realpath = realpath(__DIR__ . '/..');
-$dotenv = new Dotenv($realpath);
-$dotenv->load();
-$dotenv->required(['API_APP_KEY', 'API_JWT_SECRET', 'PERSON_ID', 'EVENTBRITE_TOKEN']);
+// $realpath = realpath(__DIR__ . '/..');
+// $dotenv = new Dotenv($realpath);
+// $dotenv->load();
+// $dotenv->required(['EVENTBRITE_TOKEN']);
 
 /**
  * Class Eventbrite
@@ -25,7 +25,7 @@ $dotenv->required(['API_APP_KEY', 'API_JWT_SECRET', 'PERSON_ID', 'EVENTBRITE_TOK
 class Eventbrite
 {
 
-    public function __construct()
+    public function __construct($token)
     {
         $this->client = new EBApi(getenv('EVENTBRITE_TOKEN'));
         $this->token  = getenv('EVENTBRITE_TOKEN');
