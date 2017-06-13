@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-circle]
+[![CircleCI][ico-circle]][link-circle]
 
 Library for integration of the EventBrite API v3 with multiple applications,
 fine tuned for Event Registration.
@@ -33,16 +33,9 @@ $ composer require industrialdev/eventbrite-integration
 * Make sure to create a `.env` file at the root of this project to create the
   necessary environment variables to access the API.
 
-``` php
-<?php
-require_once "vendor/autoload.php";
-use Industrialdev\Eventbrite\Eventbrite;
+An example of usage can be found on index.php in this repository.
 
-$eventbrite = new Eventbrite();
-$events = $eventbrite->getEvents('me');
-
-print_r($events);
-```
+--
 
 ## Change log
 
@@ -62,16 +55,7 @@ If you discover any security related issues, please email devteam@industrialagen
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/industrialdev/eventbrite-integration.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/industrialdev/eventbrite-integration/master.svg?style=flat-square
-[ico-circle]: https://circleci.com/gh/industrialdev/eventbrite-integration.svg?style=shield&circle-token=:circle-token
-
-[link-packagist]: https://packagist.org/packages/industrialdev/eventbrite-integration
-[link-travis]: https://travis-ci.org/industrialdev/eventbrite-integration
+[ico-circle]: https://circleci.com/gh/industrialdev/eventbrite-integration.svg?style=svg&circle-token=e0ddbf3fd936191ccd8dedeee40abb57b6a5cdea
 [link-circle]: https://circleci.com/gh/industrialdev/eventbrite-integration
-[link-scrutinizer]: https://scrutinizer-ci.com/g/industrialdev/eventbrite-integration/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/industrialdev/eventbrite-integration
-[link-downloads]: https://packagist.org/packages/industrialdev/eventbrite-integration
 [link-author]: https://github.com/industrialdev
-[link-contributors]: ../../contributors

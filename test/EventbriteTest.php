@@ -13,9 +13,9 @@ class EventbriteTest extends TestCase
 
     public function setUp()
     {
-        $this->client = new Eventbrite();
-        $this->ebapi = new EBApi(getenv('EVENTBRITE_TOKEN'));
-        $this->test_event = getenv('TEST_EVENT_ID');
+        $this->client      = new Eventbrite(getenv('EVENTBRITE_TOKEN'));
+        $this->ebapi       = new EBApi(getenv('EVENTBRITE_TOKEN'));
+        $this->test_event  = getenv('TEST_EVENT_ID');
         $this->test_ticket = getenv('TEST_TICKET_ID');
     }
 

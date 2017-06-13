@@ -6,16 +6,8 @@
  */
 namespace Industrialdev\Eventbrite;
 
-use Dotenv\Dotenv;
-use Exception;
 use jamiehollern\eventbrite\Eventbrite as EBApi;
 
-
-// Set up ENV vars
-// $realpath = realpath(__DIR__ . '/..');
-// $dotenv = new Dotenv($realpath);
-// $dotenv->load();
-// $dotenv->required(['EVENTBRITE_TOKEN']);
 
 /**
  * Class Eventbrite
@@ -25,8 +17,9 @@ use jamiehollern\eventbrite\Eventbrite as EBApi;
 class Eventbrite
 {
 
-    public function __construct()
+    public function __construct($token)
     {
+        $token = getenv('EVENTBRITE_TOKEN') ?? $token;
         $this->client = new EBApi(getenv('EVENTBRITE_TOKEN'));
         $this->token  = getenv('EVENTBRITE_TOKEN');
     }
