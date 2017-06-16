@@ -6,8 +6,14 @@ use Industrialdev\Eventbrite\Eventbrite;
 // Creates Eventbrite SDK instance
 $eb = new Eventbrite(getenv('EVENTBRITE_TOKEN'));
 
-// Pulls all the events created by this user
-$events = $eb->get_events('me');
+$code          = $_GET('code');
+$client_key    = getenv('CLIENT_KEY');
+$client_secret = getenv('CLIENT_SECRET');
+$app_key       = getenv('EVENTBRITE_TOKEN');
 
-// Parse the data
-$event_data = $events['body']['events'];
+// Gets the
+$auth_url = $eb->createAuthorizeUrl($client_key);
+
+Header($auth_url);
+
+// $oauth = $eb->authorize($code, $client_secret, $app_key);

@@ -8,6 +8,7 @@ namespace Industrialdev\Eventbrite;
 
 use jamiehollern\eventbrite\Eventbrite as EBApi;
 
+define("EVENTBRITE_OAUTH_BASE", "https://www.eventbrite.com/oauth/");
 
 /**
  * Class Eventbrite
@@ -22,6 +23,52 @@ class Eventbrite
         $token = getenv('EVENTBRITE_TOKEN') ?? $token;
         $this->client = new EBApi(getenv('EVENTBRITE_TOKEN'));
         $this->token  = getenv('EVENTBRITE_TOKEN');
+    }
+
+    /**
+     * To authenticate a user from a server-side application,
+     * first redirect them to our authorization URL:
+     */
+    public function createAuthorizeUrl(string $client_key): string
+    {
+        return EVENTBRITE_OAUTH_BASE . 'authorize?response_type=code&client_id=' . $client_key;
+    }
+
+    /**
+     * The user will see an Approve/Deny page.
+     * When they hit either option, they’ll be redirected back to your Redirect URI;
+     * if they hit Approve, then there will be a code query parameter on the
+     * end of the URL representing an access code.
+     */
+    public function authorize(string $code, string $client_secret, string $app_key): array
+    {
+        $post_args = [
+            'code'          => $code,
+            'client_secret' => $client_secret,
+            'client_id'     => $app_key,
+            'grant_type'    => 'authorization_code'
+        ];
+
+        $data = http_build_query($post_args);
+
+        $options = [
+            'http'=> [
+                'method'        => 'POST',
+                'header'        => "Content-type: application/x-www-form-urlencoded",
+                'content'       => $data,
+                'ignore_errors' => true
+            ]
+        ];
+
+        $url     = EVENTBRITE_OAUTH_BASE . 'token';
+        $context = stream_context_create($options);
+        $result  = file_get_contents($url, false, $context);
+
+        /**
+         * This is where we will handle errors.
+         * Eventbrite errors are a part of the response payload and are returned as an associative array.
+         */
+        return json_decode($result, true);
     }
 
     public function get_event(string $event_id): array
@@ -82,18 +129,6 @@ class Eventbrite
             }
         }
         return $urls;
-    }
-
-    public function get_roles(): array
-    {
-        // Map of roles
-        $roles = [
-            'member',
-            'communication',
-            'student',
-            'retired',
-        ];
-        return $roles;
     }
 
 }
