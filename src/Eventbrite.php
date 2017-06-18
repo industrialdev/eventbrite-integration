@@ -113,7 +113,6 @@ class Eventbrite
     {
         $event = $this->get_event($event_id);
         $codes = $this->get_access_codes($event_id);
-        $roles = $this->get_roles();
 
         $url   = $event['body']['url'];
         $title = $event['body']['name']['html'];
