@@ -71,6 +71,11 @@ class Eventbrite
         return json_decode($result, true);
     }
 
+    public function get_user_data(string $user_id = 'me'): array
+    {
+        return $this->client->get(sprintf('users/%s/', $user_id));
+    }
+
     public function get_event(string $event_id): array
     {
         return $this->client->get(sprintf('events/%s/', $event_id));
@@ -79,6 +84,12 @@ class Eventbrite
     public function get_events(string $user_id): array
     {
         return $this->client->get(sprintf('users/%s/events/', $user_id), ['status' => 'live']);
+    }
+
+    public function get_events_by_query(string $query): array
+    {
+        // XSS is handled by the API
+        return $this->client->get('events/search/', ['q' => $query]);
     }
 
     public function get_owned_events(string $user_id = 'me'): array
