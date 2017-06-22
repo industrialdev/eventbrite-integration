@@ -37,7 +37,7 @@ class Eventbrite
      * To authenticate a user from a server-side application,
      * first redirect them to our authorization URL:
      */
-    public function createAuthorizeUrl(string $client_key): string
+    public function createAuthorizeUrl($client_key)
     {
         return EVENTBRITE_OAUTH_BASE . 'authorize?response_type=code&client_id=' . $client_key;
     }
@@ -48,7 +48,7 @@ class Eventbrite
      * if they hit Approve, then there will be a code query parameter on the
      * end of the URL representing an access code.
      */
-    public function authorize(string $code, string $client_secret, string $app_key): array
+    public function authorize($code, $client_secret, $app_key)
     {
         $post_args = [
             'code'          => $code,
@@ -79,48 +79,48 @@ class Eventbrite
         return json_decode($result, true);
     }
 
-    public function get_user_data(string $user_id = 'me'): array
+    public function get_user_data($user_id = 'me')
     {
         return $this->client->get(sprintf('users/%s/', $user_id));
     }
 
-    public function get_event(string $event_id): array
+    public function get_event($event_id)
     {
         return $this->client->get(sprintf('events/%s/', $event_id));
     }
 
-    public function get_venue(string $venue_id): array
+    public function get_venue($venue_id)
     {
         return $this->client->get(sprintf('venues/%s/', $venue_id));
     }
 
-    public function get_events(string $user_id): array
+    public function get_events($user_id)
     {
         return $this->client->get(sprintf('users/%s/events/', $user_id), ['status' => 'live']);
     }
 
-    public function get_events_by_query(string $query): array
+    public function get_events_by_query($query)
     {
         // XSS is handled by the API
         return $this->client->get('events/search/', ['q' => $query]);
     }
 
-    public function get_owned_events(string $user_id = 'me'): array
+    public function get_owned_events($user_id = 'me')
     {
         return $this->client->get(sprintf('users/%s/owned_events/', $user_id), ['status' => 'live']);
     }
 
-    public function get_orders(string $user_id): array
+    public function get_orders($user_id)
     {
         return $this->client->get(sprintf('users/%s/orders/', $user_id));
     }
 
-    public function get_access_codes(string $event_id): array
+    public function get_access_codes($event_id)
     {
         return $this->client->get(sprintf('events/%s/access_codes/',$event_id));
     }
 
-    public function create_access_code(string $event_id, string $ticket_id, $opts = []): array
+    public function create_access_code($event_id, $ticket_id, $opts = [])
     {
         $default = [
             'access_code.code'               => 'CODE'.mt_rand(0, 100), // Actual access code
@@ -133,7 +133,7 @@ class Eventbrite
         return $this->client->post(sprintf('events/%s/access_codes', $event_id), $options);
     }
 
-    public function get_event_urls(string $event_id): array
+    public function get_event_urls($event_id)
     {
         $event = $this->get_event($event_id);
         $codes = $this->get_access_codes($event_id);
