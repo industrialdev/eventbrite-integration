@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "php": "~5.5",
+        "php": ">=5.5",
         "guzzlehttp/psr7": "~1.4",
         "jamiehollern/eventbrite": "^1.0"
     },
