@@ -89,6 +89,11 @@ class Eventbrite
         return $this->client->get(sprintf('events/%s/', $event_id));
     }
 
+    public function get_venue(string $venue_id): array
+    {
+        return $this->client->get(sprintf('venues/%s/', $venue_id));
+    }
+
     public function get_events(string $user_id): array
     {
         return $this->client->get(sprintf('users/%s/events/', $user_id), ['status' => 'live']);
