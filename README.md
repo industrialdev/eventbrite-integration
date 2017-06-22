@@ -2,7 +2,7 @@
 
 [![Software License][ico-license]](LICENSE.md)
 [![Packagist](https://img.shields.io/packagist/dt/industrialdev/eventbrite-integration.svg?style=flat-square)](https://packagist.org/packages/industrialdev/eventbrite-integration)
-[![CircleCI][ico-circle]][link-circle]
+[![CircleCI](https://img.shields.io/circleci/project/github/industrialdev/eventbrite-integration.svg?style=flat-square)](https://circleci.com/gh/industrialdev/eventbrite-integration)
 
 Library for integration of the EventBrite API v3 with multiple applications,
 fine tuned for Event Registration.
@@ -44,6 +44,4 @@ If you discover any security related issues, please email devteam@industrialagen
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-circle]: https://circleci.com/gh/industrialdev/eventbrite-integration.svg?style=svg&circle-token=e0ddbf3fd936191ccd8dedeee40abb57b6a5cdea
-[link-circle]: https://circleci.com/gh/industrialdev/eventbrite-integration
 [link-author]: https://github.com/industrialdev
