@@ -28,8 +28,6 @@ $ composer require industrialdev/eventbrite-integration
 
 An example of usage can be found on the [index.php](index.php) file in this repository.
 
---
-
 ## Testing
 
 ``` bash
