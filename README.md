@@ -1,6 +1,7 @@
 # Eventbrite Integration
 
 [![Software License][ico-license]](LICENSE.md)
+[![Packagist](https://img.shields.io/packagist/dt/doctrine/orm.svg?style=flat-square)](https://packagist.org/packages/industrialdev/eventbrite-integration)
 [![CircleCI][ico-circle]][link-circle]
 
 Library for integration of the EventBrite API v3 with multiple applications,
