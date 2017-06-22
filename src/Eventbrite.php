@@ -20,9 +20,8 @@ class Eventbrite
 
     public function __construct($token)
     {
-        $token = getenv('EVENTBRITE_TOKEN') ?? $token;
-        $this->client = new EBApi(getenv('EVENTBRITE_TOKEN'));
-        $this->token  = getenv('EVENTBRITE_TOKEN');
+        $this->client = new EBApi($token);
+        $this->token  = $token;
     }
 
     /**
