@@ -25,6 +25,15 @@ class Eventbrite
     }
 
     /**
+     * Determines if a connection to the API is successful
+     *
+     */
+    public function canConnect()
+    {
+        return $this->client->canConnect();
+    }
+
+    /**
      * To authenticate a user from a server-side application,
      * first redirect them to our authorization URL:
      */
