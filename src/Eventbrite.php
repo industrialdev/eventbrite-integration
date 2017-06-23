@@ -115,6 +115,11 @@ class Eventbrite
         return $this->client->get(sprintf('users/%s/orders/', $user_id));
     }
 
+    public function get_tickets($event_id)
+    {
+        return $this->client->get(sprintf('events/%s/ticket_classes/', $event_id));
+    }
+
     public function get_access_codes($event_id)
     {
         return $this->client->get(sprintf('events/%s/access_codes/',$event_id));
