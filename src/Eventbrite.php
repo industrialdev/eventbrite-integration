@@ -6,11 +6,7 @@
  */
 namespace Industrialdev\Eventbrite;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Exception\BadResponseException;
-use Psr\Http\Message\ResponseInterface;
-use Exception;
+use jamiehollern\eventbrite\Eventbrite as EBApi;
 
 define("EVENTBRITE_OAUTH_BASE", "https://www.eventbrite.com/oauth/");
 
