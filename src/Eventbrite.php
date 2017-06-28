@@ -223,16 +223,6 @@ class Eventbrite
         return $this->client->post(sprintf("events/"), $data=$data);
     }
     /**
-     * get_event
-     * GET /events/:id/
-     *        Returns an :format:`event` for the specified event. Many of Eventbrite’s API use cases revolve around pulling details
-     *        of a specific event within an Eventbrite account. Does not support fetching a repeating event series parent
-     *        (see :ref:`get-series-by-id`).
-     */
-    public function get_event($id, $expand=array()) {
-        return $this->client->get(sprintf("events/%s/", $id), $expand=$expand);
-    }
-    /**
      * post_event
      * POST /events/:id/
      *        Updates an event. Returns an :format:`event` for the specified event. Does not support updating a repeating event
@@ -1089,14 +1079,7 @@ class Eventbrite
     public function post_user_bookmarks_unsave($id, $data=array()) {
         return $this->client->post(sprintf("users/%s/bookmarks/unsave/", $id), $data=$data);
     }
-    /**
-     * get_venue
-     * GET /venues/:id/
-     *        Returns a :format:`venue` object.
-     */
-    public function get_venue($id, $expand=array()) {
-        return $this->client->get(sprintf("venues/%s/", $id), $expand=$expand);
-    }
+
     /**
      * post_venue
      * POST /venues/:id/
