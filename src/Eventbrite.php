@@ -733,14 +733,7 @@ class Eventbrite
     public function post_organizers($data=array()) {
         return $this->client->post(sprintf("organizers/"), $data=$data);
     }
-    /**
-     * get_organizer
-     * GET /organizers/:id/
-     *        Gets an :format:`organizer` by ID as ``organizer``.
-     */
-    public function get_organizer($id, $expand=array()) {
-        return $this->client->get(sprintf("organizers/%s/", $id), $expand=$expand);
-    }
+
     /**
      * post_organizer
      * POST /organizers/:id/
